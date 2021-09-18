@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION FORM</title>
+  
+    <style>
+         
+         body{
+           font-family: 'Bungee';  font-size: 16px;  
+           overflow:scroll;
+                background: url("ghg2.jpg");
+             background-size: 170%;
+                color: orangered;
+                animation-name: animatebottom;
+                animation-duration: 4s;
+                position:relative;
+       }
+        @keyframes animatebottom{
+            from{bottom: -200px; opacity: 0;}
+            to{bottom: 100px;opacity: 1;}
+        }
+           h1{
+           font-family: 'Bungee';  font-size:25px;  
+           top: -5%;
+                color: forestgreen;
+       }
+        
+        form{
+    position: absolute;
+    top: 1200%;
+    left:50%;
+    width:530;
+    height: 900px;
+    padding:30px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.9);
+    box-sizing: border-box;
+    box-shadow:0 15px 25px rgba(0,0,0,10);
+    border-radius: 25px;
+}
+          form input{
+              padding:12px 20px;
+           font-size:18px;
+           top: 10%;
+        border:none;
+               border-radius: 20px;             
+              background: rgba(0,0,0,0.0);
+              border-bottom:2px solid red;
+              color:darkolivegreen;      
+       }      
+        form input:hover{
+       font-size:20px;
+        top: 10%;
+         color:orangered;
+    border-radius: 25px;
+         background: rgba(0,0,0,0.0);
+            transition: .9s;
+            box-shadow:  0 0 10px red, 
+                             0 0 20px red, 
+                               0 0 40px red ;        
+       }
+           .submit{
+              padding:14px 25px;
+           font-size: 22px;
+                 font-family: fantasy;
+           top: 10%;
+        border:2px solid red;
+           background: rgba(0,0,0,0.0);
+              border-bottom:2px solid red;
+              color:darkolivegreen;
+              }    
+       .submit:hover{
+       font-size:24px;
+            font-family: fantasy;
+        top: 10%;
+         color:white;
+               background:darkred;
+                 border:3px solid red;
+        border-radius: 20%; 
+            transition: .9s;
+            box-shadow:  0 0 10px red, 
+                             0 0 20px red, 
+                               0 0 40px red ;
+       }
+              form input[type=reset]{
+              padding:14px 25px;
+           font-size:22px;
+                 font-family: fantasy;
+           top: 10%;
+        border:2px solid red;           
+              background: rgba(0,0,0,0.0);
+              border-bottom:2px solid red;
+              color:darkolivegreen;
+              margin-left:10px;
+       }                     
+        form input[type=reset]:hover{
+       font-size:24px;
+            font-family: fantasy;
+        top: 10%;
+         color:white;
+               background:darkred;
+            
+                 border:3px solid red;
+        border-radius: 20%;
+            transition: .9s;
+            box-shadow:  0 0 10px red, 
+                             0 0 20px red, 
+                               0 0 40px red ;       
+       }
+        .error{
+            color:red;
+            font-size: 50px;
+        }      
+           .success{
+            
+                  font-family:fantasy;
+            
+               font-size: 50px;
+               text-align: center;
+        }      
+         .success:hover{
+             text-shadow:  3 4 5px orange;
+             font-family:fantasy;
+               font-size:55px;
+               text-align: center;
+             transition: .9s;
+        } 
+        .btn{
+            float:right;
+            }
+       span{
+           border: 1px solid limegreen; 
+           border-radius: 10px;
+           background-color:; opacity:0.8; filter:alpha(opacity=500);
+        
+           background: black;
+           color: lawngreen;
+       }
+       span:hover{   
+           font-size: 55px;
+    color:green;
+    border-radius: 10px;
+           box-shadow:  0 0 35px orangered, 
+                             0 0 60px orangered, 
+                               0 0 110px orangered ;
+           transition: .9s;
+       }
+ 
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>     
+</head>
+       
+<body ><br>
+    <form method="POST">
+        <center><p><b><h1>Registration Form</h1></b></p></center>
+        <div>   <h2>Employee Name</h2>
+            <input id="firsttime" type="text" name="cname" placeholder="COMPANY NAME"  style="width:400px" required>
+            </div>    
+     <h2 classname="sector">SECTOR:</h2>
+            <select name="sector" id="sector">
+                <option value="energy">ENERGY</option>
+                <option value="agriclture">AGRICULTURE</option>
+                <option value="industriial process">INDUSTRAL PROCESS</option>
+                <option value="waste">WASTE</option>
+            </select>                                                         
+            <h2>Phone Number</h2>
+            <input id="phone" type="text" name="phone" placeholder="10 DIGIT" maxlength="10" minlength="10" style="width:400px" required><br>          
+            <h2>E-MAIL</h2>
+             <input id="email" type="email" name="email" placeholder="Email@Address"  style="width:400px"required><br>
+            
+          <input type='checkbox' name='term' required/>I AGREE THE TERMS AND CONDTIONS
+            <br><br>
+            <div class="btn">
+                <input type="button"  onClick="saveEmp();" class="submit" name="submit" value="submit" style="width:210px">
+            <input type="reset" class="btnReset" name="CLEAR" style="width:210px">
+       </div>
+    </form>
+    <script>
+       function saveEmp() 
+{ 
+const e_nm=document.getElementById("firsttime").value;
+const e_sector=document.getElementById("sector").value;
+const e_mobile=document.getElementById("phone").value;
+const e_email=document.getElementById("email").value;
+if(e_nm=="" || e_sector=="" || e_mobile=="" || e_email=="")//email validation being handled by HTML
+{
+    alert("PLEASE FILL UP ALL CREDENTIALS")
+}else if(e_mobile.match(/^[0-9]+$/) == null){
+    alert("MOBILE NUMBER SHOULD HAVE ONLY DIGITS!");
+}else{
+    var jsonStrObj={
+                "emp_nm":e_nm,
+                "e_sector":e_sector,
+                "e_mobile":e_mobile,
+                "e_email":e_email
+            };
+        jsonStr=JSON.stringify(jsonStrObj);
+var putReqStr = createPUTRequest("90936128|-31948849780853306|90944205",
+jsonStr, "Employee", "EMP_REL2");
+alert(putReqStr);
+jQuery.ajaxSetup({async: false});
+var resultObj = executeCommand(putReqStr,
+"http://api.login2explore.com:5577", "/api/iml");
+alert(JSON.stringify(resultObj));
+jQuery.ajaxSetup({async: true});
+resetForm();
+    }//else
+       }//function saveEmp()
+       
+function createPUTRequest(connToken, jsonObj, dbName, relName) {
+var putRequest = "{\n"
++ "\"token\" : \""
++ connToken
++ "\","
++ "\"dbName\": \""
++ dbName
++ "\",\n" + "\"cmd\" : \"PUT\",\n"
++ "\"rel\" : \""
++ relName + "\","
++ "\"jsonStr\": \n"
++ jsonObj
++ "\n"
++ "}";
+return putRequest;
+ }//fnction create PUTREQUEST
+
+function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+var url = dbBaseUrl + apiEndPointUrl;
+var jsonObj;
+$.post(url, reqString, function (result) {
+jsonObj = JSON.parse(result);
+}).fail(function (result) {
+var dataJsonObj = result.responseText;
+jsonObj = JSON.parse(dataJsonObj);
+});
+return jsonObj;
+}//executeCommand()
+
+function resetForm() {
+$("#firsttime").val("")
+$("#sector").val("");
+$("#phone").val("");
+$("#email").val("");
+$("#firsttime").focus();
+}//resetForm close
+    
+    </script>
+</body>
+</html>
+ 
